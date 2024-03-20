@@ -3,7 +3,7 @@ import { Task } from '../../../models/task';
 
 const getExpiredTasks = async (): Promise<Task[]> => {
   const response = await fetch(
-    `${process.env.LOCAL_URL}/api/tasks/expired`,
+    `${process.env.URL}/api/tasks/expired`,
     {
       cache: 'no-store',
     }

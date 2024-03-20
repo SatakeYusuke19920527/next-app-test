@@ -8,7 +8,7 @@ interface EditTaskPageProps {
 
 const getTask = async (id: string): Promise<Task> => {
   const response = await fetch(
-    `${process.env.LOCAL_URL}/api/tasks/${id}`,
+    `${process.env.URL}/api/tasks/${id}`,
     {
       cache: 'no-store',
     }
