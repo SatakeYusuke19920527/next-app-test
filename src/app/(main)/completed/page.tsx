@@ -1,12 +1,14 @@
-import React from 'react';
 import TaskCard from '../../../components/TaskCard/TaskCard';
 import { Task } from '../../../models/task';
 
 
 const getCompletedTasks = async (): Promise<Task[]> => {
-  const response = await fetch(`${process.env.URL}/api/tasks/completed`, {
-    cache: 'no-store',
-  });
+  const response = await fetch(
+    `${process.env.PRODUCTION_URL}/api/tasks/completed`,
+    {
+      cache: 'no-store',
+    }
+  );
 
   if (response.status !== 200) throw new Error('Failed to fetch tasks');
 

@@ -7,9 +7,12 @@ interface EditTaskPageProps {
 }
 
 const getTask = async (id: string): Promise<Task> => {
-  const response = await fetch(`${process.env.URL}/api/tasks/${id}`, {
-    cache: 'no-store',
-  });
+  const response = await fetch(
+    `${process.env.PRODUCTION_URL}/api/tasks/${id}`,
+    {
+      cache: 'no-store',
+    }
+  );
   if (response.status !== 200) throw new Error('Failed to fetch tasks');
   const data = await response.json();
   return data.resources[0] as Task;
