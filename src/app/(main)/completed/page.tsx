@@ -4,7 +4,7 @@ import { Task } from '../../../models/task';
 
 const getCompletedTasks = async (): Promise<Task[]> => {
   const response = await fetch(
-    `${process.env.PRODUCTION_URL}/api/tasks/completed`,
+    `${process.env.LOCAL_URL}/api/tasks/completed`,
     {
       cache: 'no-store',
     }

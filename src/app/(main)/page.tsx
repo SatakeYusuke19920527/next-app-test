@@ -3,7 +3,7 @@ import { MdAddTask } from 'react-icons/md';
 import TaskCard from '../../components/TaskCard/TaskCard';
 import { Task } from '../../models/task';
 const getAllTasks = async (): Promise<Task[]> => {
-  const response = await fetch(`${process.env.PRODUCTION_URL}/api/tasks`, {
+  const response = await fetch(`${process.env.LOCAL_URL}/api/tasks`, {
     cache: 'no-store',
   });
 
