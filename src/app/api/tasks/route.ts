@@ -8,9 +8,9 @@ export const GET = async () => {
     };
 
     const { resources } = await container.items.query(querySpec).fetchAll();
-    return NextResponse.json({resources}, {status: 200});
-  } catch (error) {
-    return NextResponse.json({error: error.message}, {status: 500});
+    return NextResponse.json({ resources }, { status: 200 });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 };
 
