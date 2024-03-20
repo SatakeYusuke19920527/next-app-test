@@ -11,7 +11,7 @@ const EditTaskForm = ({ task }: { task: Task }) => {
   const [dD, setDD] = useState<string>(task.dueDate);
   const [is, setIs] = useState<boolean>(task.isCompleted);
 
-  const updateTaskWithId = updateTask.bind(null, task.id);
+  const updateTaskWithId = updateTask.bind(null, task.id as string);
   const initialState: FormState = { error: '' };
   const [state, formAction] = useFormState(updateTaskWithId, initialState);
 
