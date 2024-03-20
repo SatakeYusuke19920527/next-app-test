@@ -15,7 +15,6 @@ const getExpiredTasks = async (): Promise<Task[]> => {
 
 const ExpiredTaskPage = async () => {
   const expiredTasks = await getExpiredTasks();
-  console.log("🚀 ~ ExpiredTaskPage ~ expiredTasks:", expiredTasks)
   return (
     <div className="text-gray-800 p-8 h-full overflow-y-auto pb-24">
       <header className="flex justify-between items-center">
