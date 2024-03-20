@@ -1,13 +1,11 @@
 "use client"
 
-import React from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { FormState, createTask } from '../../actions/task';
 
 const NewTaskForm = () => {
   const initialState: FormState = { error: "" }
   const [state, formAction] = useFormState(createTask, initialState)
-  console.log("🚀 ~ NewTaskForm ~ state:", state)
 
   const SubmitButton = () => {
     const {pending} = useFormStatus()
