@@ -20,10 +20,10 @@ export const createTask = async (state: FormState, formData: FormData) => {
   try {
     const { resource: createdItem } = await container.items.create(newTask);
     console.log(`Created item: ${JSON.stringify(createdItem)}`);
-  } catch (error) {
+  } catch (error: any) {
     state.error = error.message;
-    console.log("🚀 ~ createTask ~ error:", error)
-    return state
+    console.log('🚀 ~ createTask ~ error:', error);
+    return state;
   }
 
   redirect('/');
@@ -48,7 +48,7 @@ export const updateTask = async (id: string, state: FormState, formData: FormDat
       .replace(updatedItem);
 
     console.log('Updated item:', replacedItem);
-  } catch (error) {
+  } catch (error: any) {
     state.error = error.message;
     console.log('🚀 ~ updateTask ~ error:', error.message);
     return state;
@@ -64,12 +64,11 @@ export const deleteTask = async (
 ) => {
 
   try {
-    // データを削除    
-    const { resource: deleteItem } = await container
-      .item(id, id).delete()
+    // データを削除
+    const { resource: deleteItem } = await container.item(id, id).delete();
 
     console.log('Delete item:', deleteItem);
-  } catch (error) {
+  } catch (error: any) {
     state.error = error.message;
     console.log('🚀 ~ deleteTask ~ error:', error.message);
     return state;
