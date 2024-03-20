@@ -10,7 +10,7 @@ export const GET = async (_: NextRequest,{ params }:{params: {id: string}}) => {
 
     const { resources } = await container.items.query(querySpec).fetchAll();
     return NextResponse.json({ resources }, { status: 200 });
-  } catch (error) {
+  } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 };
