@@ -15,7 +15,7 @@ const EditTaskForm = ({ task }: { task: Task }) => {
   const initialState: FormState = { error: '' };
   const [state, formAction] = useFormState(updateTaskWithId, initialState);
 
-  const submitButton = () => {
+  const SubmitButton = () => {
     const { pending } = useFormStatus();
     return (
       <button
@@ -89,7 +89,7 @@ const EditTaskForm = ({ task }: { task: Task }) => {
           </label>
         </div>
 
-        {submitButton()}
+        <SubmitButton />
         {state.error && <p className="mt-4 text-red-500">{state.error}</p>}
       </form>
     </div>
