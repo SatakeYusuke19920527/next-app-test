@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { MdAddTask } from 'react-icons/md';
 import TaskCard from '../../components/TaskCard/TaskCard';
 import { Task } from '../../models/task';
+
 const getAllTasks = async (): Promise<Task[]> => {
   const response = await fetch(`${process.env.URL}/api/tasks`, {
     cache: 'no-store',
@@ -15,6 +16,7 @@ const getAllTasks = async (): Promise<Task[]> => {
 
 export default async function MainPage() {
   const allTasks = await getAllTasks();
+  
   return (
     <div className="text-gray-800 p-8 h-full overflow-y-auto pb-24">
       <header className="flex justify-between items-center">
