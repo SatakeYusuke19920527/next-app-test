@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRegCheckSquare, FaRegClock, FaTasks } from 'react-icons/fa';
+import { IoMdLogIn } from 'react-icons/io';
 import NavItem from './NavItem/NavItem';
 
 interface NavItemType {
@@ -28,6 +29,12 @@ const NavList = () => {
       label: 'Expired Tasks',
       link: '/expired',
       icon: <FaRegClock className="size-5" />,
+    },
+    {
+      id: 4,
+      label: 'Auth Page',
+      link: '/login',
+      icon: <IoMdLogIn className="size-5" />,
     },
   ];
   return (
