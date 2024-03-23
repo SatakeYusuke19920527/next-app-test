@@ -56,8 +56,13 @@ const LoginForm = () => {
             className="block mt-2 py-1.5 px-2 w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-gray-300"
           />
         </div>
+        <div>
+          <SubmitButton />
+        </div>
+        <div className="flex justify-content items-center mt-2 py-1.5 px-2 w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-gray-300">
+            <a href="/.auth/login/aad">EntraID認証</a>
+        </div>
 
-        <SubmitButton />
         {state.error && <p className="mt-4 text-red-500">{state.error}</p>}
       </form>
     </div>
